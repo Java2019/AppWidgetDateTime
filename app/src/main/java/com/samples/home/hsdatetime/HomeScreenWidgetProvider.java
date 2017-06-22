@@ -1,3 +1,6 @@
+
+package com.samples.home.hsdatetime;
+
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
@@ -18,8 +21,8 @@ public class HomeScreenWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         String currentTime = simpleDateFormat.format(new Date());
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
-        remoteViews.setTextViewText(R.id.text, currentTime);
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), com.samples.home.hsdatetime.R.layout.main);
+        remoteViews.setTextViewText(com.samples.home.hsdatetime.R.id.text, currentTime);
         appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
         Toast.makeText(context, "Update", Toast.LENGTH_SHORT).show();
 
